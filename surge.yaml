@@ -21,7 +21,7 @@ jobs:
       
   CD:
     needs: CI
-    name: Teste de CD
+    name: Teste de CD 
     runs-on: ubuntu-latest
     
     steps:
