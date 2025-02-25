@@ -24,10 +24,10 @@ jobs:
     name: Teste de CD
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to foo-bar.surge.sh
+      - name: Deploy to ilson-filho.surge.sh
         uses: dswistowski/surge-sh-action@v1
         with:
           domain: 'ilson-filho.surge.sh'
-          project: './dist'
+          project: 'dist/'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
