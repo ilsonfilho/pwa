@@ -29,5 +29,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 23
+      - run: ls -la
       - run: npm install -g surge
       - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
