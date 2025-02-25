@@ -25,13 +25,13 @@ jobs:
     needs: CI
     name: Teste de CD 
     runs-on: ubuntu-latest
-    name: Deploying to surge
+    name: Deploying to surg
     steps:
       - uses: actions/checkout@v3
       - name: Install surge and fire deployment
         uses: actions/setup-node@v3
         with:
-          node-version: 23
+          node-version: '23.x'
       - rum: pwd
       - rum: ls -la .
       - run: npm install -g surge
