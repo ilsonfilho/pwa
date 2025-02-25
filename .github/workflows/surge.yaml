@@ -34,4 +34,4 @@ jobs:
       - name: Listar diretório
         run: ls -la .
       - run: npm install -g surge
-      - run: surge ./dist ilson-filho.surge.sh --token 36765332d5b02e992f32f2678f151539
+      - run: surge dist ilson-filho.surge.sh --token 36765332d5b02e992f32f2678f151539
