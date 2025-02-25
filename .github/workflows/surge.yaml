@@ -15,9 +15,9 @@ jobs:
     - name: Instalar dependências
       run: npm install
     - name: Executar testes
-      run: npm test
+      run: npm run test
     - name: Gerar build
-      run: npm build
+      run: npm run build
       
   CD:
     needs: CI
