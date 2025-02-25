@@ -19,7 +19,7 @@ jobs:
     - name: Gerar build
       run: npm run build
     - name: Listar diretório
-      run: ls -la
+      run: ls -la .
       
   CD:
     needs: CI
