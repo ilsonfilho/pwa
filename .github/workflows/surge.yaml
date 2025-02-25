@@ -1,0 +1,32 @@
+name: My workflow
+
+on: push
+
+jobs:
+  CI:
+    name: Teste de CI  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '23.x'
+    - name: Instalar dependências
+      run: npm install
+    - name: Executar testes
+      run: npm test
+    - name: Gerar build
+      run: npm build
+      
+  CD:
+    name: Teste de CD
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to foo-bar.surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'foo-bar.surge.sh'
+          project: './dist'
+          login: ${{ secrets.surge_login }}
+          token: ${{ secrets.surge_token }}
