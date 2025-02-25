@@ -20,6 +20,7 @@ jobs:
       run: npm build
       
   CD:
+    needs: CI
     name: Teste de CD
     runs-on: ubuntu-latest
     steps:
