@@ -18,16 +18,21 @@ jobs:
       run: npm run test
     - name: Gerar build
       run: npm run build
+    - name: Listar diretório
+      run: ls -la .
       
   CD:
     needs: CI
-    name: Teste de CD
+    name: Teste de CD 
     runs-on: ubuntu-latest
+    name: Deploying to surge
     steps:
-      - name: Deploy to ilson-filho.surge.sh
-        uses: dswistowski/surge-sh-action@v1
+      - uses: actions/checkout@v3
+      - name: Install surge and fire deployment
+        uses: actions/setup-node@v3
         with:
-          domain: 'ilson-filho.surge.sh'
-          project: 'dist'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+          node-version: 23
+      - rum: pwd
+      - rum: ls -la .
+      - run: npm install -g surge
+      - run: surge ./dist/ ilson-filho.surge.sh --token 36765332d5b02e992f32f2678f151539
