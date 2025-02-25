@@ -25,12 +25,14 @@ jobs:
     needs: CI
     name: Teste de CD 
     runs-on: ubuntu-latest
-    
+    name: Deploying to surge
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Install surge and fire deployment
+        uses: actions/setup-node@v3
         with:
-          node-version: '23.x'
-      - run: ls -la
+          node-version: 23
+      - rum: pwd
+      - rum: ls -la .
       - run: npm install -g surge
-      - run: surge ./dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: surge ./dist/ ilson-filho.surge.sh --token 36765332d5b02e992f32f2678f151539
