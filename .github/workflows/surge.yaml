@@ -31,7 +31,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '23.x'
-      - rum: pwd
-      - rum: ls -la .
       - run: npm install -g surge
       - run: surge ./dist/ ilson-filho.surge.sh --token 36765332d5b02e992f32f2678f151539
