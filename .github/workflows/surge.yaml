@@ -25,7 +25,6 @@ jobs:
     needs: CI
     name: Teste de CD 
     runs-on: ubuntu-latest
-    name: Deploying to surg
     steps:
       - uses: actions/checkout@v3
       - name: Install surge and fire deployment
